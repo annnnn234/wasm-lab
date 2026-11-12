@@ -2,13 +2,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Моя Wasm программа</title>
+    <title>Моя Wasm Игра</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 20px; background-color: #f4f4f9; }
+        #game-area { position: relative; width: 600px; height: 400px; margin: 20px auto; border: 3px solid #333; background: white; border-radius: 10px; overflow: hidden; }
+        #target { position: absolute; width: 50px; height: 50px; background-color: #ff4757; border-radius: 50%; cursor: pointer; display: none; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+        #info { font-size: 24px; font-weight: bold; }
+        #start-btn { padding: 10px 30px; font-size: 20px; cursor: pointer; background-color: #2ed573; color: white; border: none; border-radius: 5px; }
+        #start-btn:disabled { background-color: #ccc; }
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-    <h2>Программа на WebAssembly</h2>
-    <button id="run" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Запустить</button>
-    <p id="output" style="font-size: 20px; color: green; margin-top: 20px;"></p>
-
+<body>
+    <h1>Игра "Поймай мишень"</h1>
+    <div id="info">Очки: <span id="score">0</span> | Время: <span id="time">10</span> сек.</div>
+    
+    <div id="game-area">
+        <div id="target"></div>
+    </div>
+    
+    <button id="start-btn">Начать игру</button>
     <script src="main.js"></script>
 </body>
 </html>
