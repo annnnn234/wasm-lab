@@ -2,25 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Моя Wasm Игра</title>
+    <title>Космический Шутер</title>
     <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 20px; background-color: #f4f4f9; }
-        #game-area { position: relative; width: 600px; height: 400px; margin: 20px auto; border: 3px solid #333; background: white; border-radius: 10px; overflow: hidden; }
-        #target { position: absolute; width: 50px; height: 50px; background-color: #ff4757; border-radius: 50%; cursor: pointer; display: none; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-        #info { font-size: 24px; font-weight: bold; }
-        #start-btn { padding: 10px 30px; font-size: 20px; cursor: pointer; background-color: #2ed573; color: white; border: none; border-radius: 5px; }
-        #start-btn:disabled { background-color: #ccc; }
+        body { background-color: #050510; color: #fff; font-family: 'Courier New', Courier, monospace; text-align: center; margin-top: 10px; }
+        h1 { color: #00ffff; text-shadow: 0 0 10px #00ffff; margin-bottom: 5px; }
+        canvas { border: 2px solid #00ffff; box-shadow: 0 0 20px #00ffff; background-color: #000; border-radius: 10px; }
+        #info { font-size: 20px; color: #00ff00; text-shadow: 0 0 5px #00ff00; margin-bottom: 10px; }
+        .controls { color: #888; font-size: 14px; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <h1>Игра "Поймай мишень"</h1>
-    <div id="info">Очки: <span id="score">0</span> | Время: <span id="time">10</span> сек.</div>
-    
-    <div id="game-area">
-        <div id="target"></div>
-    </div>
-    
-    <button id="start-btn">Начать игру</button>
+    <h1>Space Defender</h1>
+    <div id="info">Очки: <span id="score">0</span> | Жизни: <span id="lives">3</span></div>
+    <canvas id="gameCanvas" width="600" height="500"></canvas>
+    <p class="controls">← → для движения | ПРОБЕЛ чтобы стрелять</p>
     <script src="main.js"></script>
 </body>
 </html>
